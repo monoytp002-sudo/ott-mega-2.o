@@ -360,11 +360,6 @@ export const AdminPanelView: React.FC<AdminPanelViewProps> = ({
     }
   };
 
-  // Quick unlock for preview convenience
-  const handleQuickUnlock = () => {
-    setIsLoggedIn(true);
-  };
-
   // Handle Order Status Change
   const handleUpdateOrderStatus = async (orderId: string, newStatus: OrderStatus) => {
     try {
@@ -591,7 +586,7 @@ export const AdminPanelView: React.FC<AdminPanelViewProps> = ({
                 type="password"
                 value={pinInput}
                 onChange={(e) => setPinInput(e.target.value)}
-                placeholder="Enter Admin PIN (default: admin123)"
+                placeholder="Enter Admin PIN"
                 className="w-full px-4 py-3 rounded-xl bg-zinc-900 border border-zinc-700 text-center text-white placeholder-zinc-500 text-sm tracking-widest focus:outline-none focus:border-pink-500 transition-colors"
                 autoFocus
               />
@@ -606,19 +601,6 @@ export const AdminPanelView: React.FC<AdminPanelViewProps> = ({
               <span>Unlock Admin Panel</span>
             </button>
           </form>
-
-          {/* Quick Demo Unlock button for evaluator convenience */}
-          <div className="pt-2 border-t border-zinc-800">
-            <button
-              onClick={handleQuickUnlock}
-              className="text-xs text-pink-400 hover:text-pink-300 font-semibold underline underline-offset-4"
-            >
-              Quick Unlock (Demo Review Access)
-            </button>
-            <p className="text-[10px] text-zinc-500 mt-1">
-              Default password: <code className="text-zinc-400 font-mono">admin123</code>
-            </p>
-          </div>
         </div>
       </div>
     );

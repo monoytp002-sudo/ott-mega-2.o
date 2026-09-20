@@ -625,11 +625,11 @@ async function startServer() {
   // 7. ADMIN AUTH PIN VERIFICATION
   app.post('/api/admin/verify', (req: Request, res: Response) => {
     const { pin } = req.body;
-    // Default PIN: admin123 or 8899
-    if (pin === 'admin123' || pin === '8899' || pin === 'admin') {
+    const currentAdminPin = process.env.ADMIN_PIN || 'ott@2008';
+    if (typeof pin === 'string' && pin.trim() === currentAdminPin) {
       return res.json({ success: true, authenticated: true, token: 'ott-mega-admin-token-2026' });
     }
-    return res.status(401).json({ success: false, error: 'Incorrect Admin PIN. Default is admin123' });
+    return res.status(401).json({ success: false, error: 'Incorrect Admin PIN. Please enter ott@2008' });
   });
 
   // ----------------------------------------------------
