@@ -1,0 +1,6 @@
+{
+  "name": "OTT Mega 2.0",
+  "description": "Premium OTT subscription seller platform featuring popular streaming packages, live order tracking, instant credential delivery, and a full-featured admin management panel.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
